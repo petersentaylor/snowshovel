@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import json
 import snowflake.snowpark as snowpark
 from snowflake.snowpark import Session, DataFrame
 import utils as u
@@ -8,9 +7,6 @@ import utils as u
 
 
 # connect to Snowflake
-# with open('/Users/taylor/Desktop/development/snowshovel/snowshovel/creds.json') as f:
-#     connection_parameters = json.load(f)
-#     print(connection_parameters) 
 session = Session.builder.configs(st.secrets["db_credentials"]).create()
 
 
